@@ -26,7 +26,11 @@
 }
 
 - (IBAction)shareAction:(UIButton *)sender {
-    [self showShareMenu];
+    UMShareWebpageObject *webObj = [UMShareWebpageObject shareObjectWithTitle:@"百度" descr:@"百度首页" thumImage:[UIImage imageNamed:@"Baidu"]];
+    webObj.webpageUrl = @"https://www.baidu.com";
+    UMSocialMessageObject *msgObj = [UMSocialMessageObject messageObjectWithMediaObject:webObj];
+    
+    [self showShareMenuWithMsgObject:msgObj];
 }
 
 @end

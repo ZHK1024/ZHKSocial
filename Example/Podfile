@@ -8,6 +8,8 @@ target 'ZHKSocial_Example' do
   
   pod 'UMCShare/Social/ReducedWeChat', '~>6.9.4'
   pod 'UMCShare/Social/ReducedQQ', '~>6.9.4'
+  pod 'UMCShare/Social/ReducedSina', '~>6.9.4'
+  pod 'UMCShare/Social/SMS'
   
   target 'ZHKSocial_Tests' do
     inherit! :search_paths

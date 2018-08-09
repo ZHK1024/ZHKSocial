@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UMShare/UMSocialMessageObject.h>
 
 @interface UIViewController (UMSocial)
 
-- (void)showShareMenu;
+- (void)showShareMenuWithMsgObject:(UMSocialMessageObject *)object;
 
 @end

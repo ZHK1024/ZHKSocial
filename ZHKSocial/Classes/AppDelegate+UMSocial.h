@@ -10,6 +10,11 @@
 
 @interface UIResponder (UMSocial)
 
+/**
+ 注册友盟分享 SDK
+
+ @param launchOptions launchOptions
+ */
 - (void)registUMSocialWithLaunchOptions:(NSDictionary *)launchOptions;
 
 - (BOOL)umsocial_application:(UIApplication *)application handleOpenURL:(NSURL *)url;
