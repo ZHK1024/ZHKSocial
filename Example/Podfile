@@ -1,0 +1,15 @@
+#use_frameworks!
+# plugin 'cocoapods-static-frameworks'
+#use_frameworks!
+#static_frameworks
+
+target 'ZHKSocial_Example' do
+  pod 'ZHKSocial', :path => '../'
+  
+  pod 'UMCShare/Social/ReducedWeChat', '~>6.9.4'
+  pod 'UMCShare/Social/ReducedQQ', '~>6.9.4'
+  
+  target 'ZHKSocial_Tests' do
+    inherit! :search_paths
+  end
+end

@@ -1,0 +1,37 @@
+PODS:
+  - UMCCommon (1.5.2)
+  - UMCShare/Core (6.9.4):
+    - UMCCommon
+  - UMCShare/Social/QQ (6.9.4):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedQQ (6.9.4):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.4):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/UI (6.9.4):
+    - UMCCommon
+    - UMCShare/Core
+  - ZHKSocial (0.1.0):
+    - UMCShare/UI
+
+DEPENDENCIES:
+  - UMCShare/Social/QQ (~> 6.9.4)
+  - UMCShare/Social/ReducedWeChat (~> 6.9.4)
+  - ZHKSocial (from `../`)
+
+EXTERNAL SOURCES:
+  ZHKSocial:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UMCCommon: 4392868ac47ff1b101663106bb114ba616fabbad
+  UMCShare: aa233aecad67979930fe43f3a2f676023b669439
+  ZHKSocial: b65ada8c8d070c96bc07bc5138a46c828698f021
+
+PODFILE CHECKSUM: 83ba60a644a2dfbcd529b8ac9d132ea56f99d534
+
+COCOAPODS: 1.2.1.beta.1
