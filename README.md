@@ -47,7 +47,7 @@ pod 'UMCShare/Social/ReducedSina', '~>6.9.4
    ```
    #import <AppDelegate+UMSocial.h>
    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+            // Override point for customization after application launch.
 	    [self registUMSocialWithLaunchOptions:launchOptions];
 	    return YES;
 	}
@@ -60,7 +60,7 @@ pod 'UMCShare/Social/ReducedSina', '~>6.9.4
    
    **分享**
    ```
-   UMShareWebpageObject *webObj = [UMShareWebpageObject shareObjectWithTitle:@"百度" descr:@"百度首页" thumImage:[UIImage imageNamed:@"Baidu"]];
+    UMShareWebpageObject *webObj = [UMShareWebpageObject shareObjectWithTitle:@"百度" descr:@"百度首页" thumImage:[UIImage imageNamed:@"Baidu"]];
     webObj.webpageUrl = @"https://www.baidu.com";
     UMSocialMessageObject *msgObj = [UMSocialMessageObject messageObjectWithMediaObject:webObj];
     
