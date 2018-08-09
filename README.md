@@ -47,7 +47,7 @@ pod 'UMCShare/Social/ReducedSina', '~>6.9.4
    ```
    #import <AppDelegate+UMSocial.h>
    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-            // Override point for customization after application launch.
+        // Override point for customization after application launch.
 	    [self registUMSocialWithLaunchOptions:launchOptions];
 	    return YES;
 	}
