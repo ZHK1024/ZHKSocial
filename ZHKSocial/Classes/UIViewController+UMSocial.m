@@ -12,10 +12,10 @@
 @implementation UIViewController (UMSocial)
 
 - (void)showShareMenuWithMsgObject:(UMSocialMessageObject *)object {
-    [UMSocialUIManager setPreDefinePlatforms:[self platforms]];
+    __weak typeof(self) ws = self;
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         // 分享
-        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:object currentViewController:self completion:^(id result, NSError *error) {
+        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:object currentViewController:ws completion:^(id result, NSError *error) {
             if (result) {
                 NSLog(@"分享成功!");
             } else {
@@ -23,12 +23,6 @@
             }
         }];
     }];
-}
-
-- (NSArray *)platforms {
-    NSMutableArray *array = [NSMutableArray arrayWithArray:[UMSocialManager defaultManager].platformTypeArray];
-    [array addObject:@(UMSocialPlatformType_Sms)];
-    return array;
 }
 
 @end

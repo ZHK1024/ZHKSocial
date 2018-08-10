@@ -7,16 +7,18 @@
 //
 
 #import "AppDelegate+UMSocial.h"
+#import "ZHKSocialKeys.h"
 #import <UMShare/UMShare.h>
 #import <UMCommon/UMCommon.h>
-#import "ZHKSocialKeys.h"
+#import <UShareUI/UShareUI.h>
+#import "UMSocialManager+Settings.h"
 
 @implementation UIResponder (UMSocial)
 
 #pragma mark -
 
 - (void)registUMSocialWithLaunchOptions:(NSDictionary *)launchOptions {
-    NSDictionary *settings = [self settingsInfo];
+    NSDictionary *settings = [UMSocialManager settingInfo];
     [self initSDKWithAppKey:settings[UMSocialAppKey] channel:settings[UMSocialChannelKey]];
     [self registPlatforms:settings[UMSocialPlatformKey]];
 }
@@ -31,6 +33,7 @@
  */
 - (void)initSDKWithAppKey:(NSString *)appKey channel:(NSString *)channel {
     [UMConfigure initWithAppkey:appKey channel:channel];
+    [UMSocialUIManager setPreDefinePlatforms:[UMSocialManager useablePlatforms]];
 }
 
 /**
@@ -44,19 +47,6 @@
             [[UMSocialManager defaultManager] setPlaform:[platform[UMSocialPlatformTypeKey] integerValue] appKey:platform[UMSocialPlatformAppKey] appSecret:platform[UMSocialPlatformAppSecretKey] redirectURL:nil];
         }
     }
-}
-
-/**
- 读取配置信息
-
- @return 配置信息
- */
-- (NSDictionary *)settingsInfo {
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"ZHKSocialBundle" ofType:@"bundle"];
-    NSString *settingPath = [[NSBundle bundleWithPath:bundlePath] pathForResource:@"ZHKSocialSettings" ofType:@"plist"];
-    
-    NSDictionary *settings = [[NSDictionary dictionaryWithContentsOfFile:settingPath] valueForKey:[NSBundle mainBundle].bundleIdentifier];
-    return settings;
 }
 
 #pragma mark -

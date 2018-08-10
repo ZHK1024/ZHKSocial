@@ -50,7 +50,7 @@
 				<key>name</key>
 				<string>QQ</string>
 				<key>enable</key>
-				<true/>
+				<false/>
 				<key>kPlatformType</key>
 				<integer>4</integer>
 				<key>kAppKey</key>
