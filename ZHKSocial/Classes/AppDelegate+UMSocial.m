@@ -33,7 +33,10 @@
  */
 - (void)initSDKWithAppKey:(NSString *)appKey channel:(NSString *)channel {
     [UMConfigure initWithAppkey:appKey channel:channel];
-    [UMSocialUIManager setPreDefinePlatforms:[UMSocialManager useablePlatforms]];
+    // 新浪 SDK 判断是否安装微博, 需要稍作延迟才能获取到准确结果
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UMSocialUIManager setPreDefinePlatforms:[UMSocialManager useablePlatforms]];
+    });
 }
 
 /**
